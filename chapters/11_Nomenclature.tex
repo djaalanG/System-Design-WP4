@@ -1,0 +1,70 @@
+%% This first part defines some parameters for the nomenclature and allows for the use of the \nomunit command. Start adding nomenclature entries to the lines underneath the proper group.
+%% Greek letters for physical constants and Roman letters for variables
+
+\addcontentsline{toc}{chapter}{List of Symbols}
+
+\renewcommand{\nomgroup}[1]{%
+    \ifthenelse{\equal{#1}{A}}{\item[\textbf{Abbreviations}]}{
+    \ifthenelse{\equal{#1}{R}}{\item[\textbf{Roman Letters}]}{
+    \ifthenelse{\equal{#1}{G}}{\item[\textbf{Greek Letters}]}{}}}}
+
+\newcommand{\nomunit}[1]{\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+
+%% Add your nomenclature entries here. Some examples are given
+\nomenclature[0]{$ $}{\nomunit{}} % white-space between title and first list element
+
+%Abbreviations
+\nomenclature[A]{AoA}{\hspace*{0.75cm}Angle of Attack\nomunit{deg}}
+\nomenclature[A]{C.G.}{\hspace*{0.75cm}Center of gravity\nomunit{-}}
+\nomenclature[A]{$HLD$}{\hspace*{0.75cm}High lift device\nomunit{-}}
+\nomenclature[A]{$T/W$}{\hspace*{0.75cm}Thrust to weight ratio\nomunit{-}}
+\nomenclature[A]{$MPW$}{\hspace*{0.75cm}Maximum payload weight\nomunit{-}}
+\nomenclature[A]{$MF$}{\hspace*{0.75cm}Fuel mass\nomunit{-}}
+%\nomenclature[A]{MAC}{\hspace*{0.75cm}Mean aerodynamic chord of wing\nomunit{m}}
+%\nomenclature[A]{MAC_h}{\hspace*{0.75cm}Mean aerodynamic chord of horizontal tail\nomunit{m}}
+%\nomenclature[A]{MAC_v}{\hspace*{0.75cm}Mean aerodynamic chord of vertical tail\nomunit{m}}
+\nomenclature[A]{XLEMAC}{\hspace*{0.35cm}x-position of the leading edge of mean aerodynamic chord \nomunit{m}}
+\nomenclature[A]{TSFC}{\hspace*{0.75cm}Thrust specific fuel consumption\nomunit{m N$^{-1}$}}
+\nomenclature[A]{OEW}{\hspace*{0.75cm}Operational empty weight\nomunit{kg}}
+\nomenclature[A]{OEI}{\hspace*{0.75cm}One engine inoperative\nomunit{-}}
+\nomenclature[A]{LCN}{\hspace*{0.70cm} Load Classification Number\nomunit{-}}
+\nomenclature[A]{EAS}{\hspace*{0.70cm} Equivalent Airspeed\nomunit{m s$^{-1}$}}
+\nomenclature[A]{FL}{\hspace*{0.70cm} Flight level\nomunit{$10^{2}$ ft}}
+%\nomenclature[A]{Y_{MLG}}{\hspace*{0.75cm} Track width of the main landing gear\nomunit{m}}
+%\nomenclature[A]{X_{MLG}}{\hspace*{0.75cm} Position of the main landing gear (HALF OF X IN ABBR - put all in one sec)\nomunit{m}}
+%\nomenclature[A]{X_{NLG}}{\hspace*{0.75cm} Position of the nose landing gear\nomunit{m}}
+%\nomenclature[A]{X_{OEWCG}}{\hspace*{0.45cm}Position of the OEW center of gravity\nomunit{m}}
+%\nomenclature[A]{X_{aftcg}}{\hspace*{0.75cm}Position of the most aft position of the center of gravity\nomunit{m}}
+%\nomenclature[A]{X_{WCG}}{\hspace*{0.75cm}Position center of gravity of the wing group\nomunit{m}}
+%\nomenclature[A]{X_{FCG}}{\hspace*{0.75cm}Position of the center of gravity of the fuel\nomunit{m}}
+\nomenclature[A]{FF}{\hspace*{0.75cm}Form Factor\nomunit{-}}
+\nomenclature[A]{IF}{\hspace*{0.75cm}Interference Factor\nomunit{-}}
+
+%% Greek letters
+%% \nomenclature[g]{$\alpha$}{description\nomunit{x}}
+%example: \nomenclature[g]{$\phi$}{\hspace*{0.75cm}Banking angle\nomunit{deg}}
+\nomenclature[g]{$\rho$}{\hspace*{0.75cm}Density\nomunit{kg m$^{-3}$}}
+\nomenclature[g]{$\tau$}{\hspace*{0.75cm}Torque\nomunit{Nm}}
+
+%\nomenclature[g]{$\alpha$}{\hspace*{0.75cm}Angle of attack\nomunit{deg}}%
+
+%%Roman letters
+%%% \nomenclature[r]{$x$}{description\nomunit{y}}
+\nomenclature[r]{n}{\hspace*{0.75cm}Load factor\nomunit{-}}
+\nomenclature[r]{S}{\hspace*{0.75cm}Wing Area\nomunit{m$^2$}}
+\nomenclature[r]{C$_L$}{\hspace*{0.75cm}Lift coefficient\nomunit{-}}
+\nomenclature[r]{V}{\hspace*{0.75cm} Velocity\nomunit{m s$^{-1}$}}
+\nomenclature[r]{$V_{S0}$}{\hspace*{0.75cm}Stall speed with flaps extended\nomunit{ms$^{-1}$}}
+\nomenclature[r]{$V_{S1}$}{\hspace*{0.75cm}Stall speed with flaps retracted\nomunit{ms$^{-1}$}}
+\nomenclature[r]{$V_{A}$}{\hspace*{0.75cm}Manoeuvring speed\nomunit{ms$^{-1}$}}
+\nomenclature[r]{$V_{C}$}{\hspace*{0.75cm}Cruise speed\nomunit{ms$^{-1}$}}
+\nomenclature[r]{$V_{D}$}{\hspace*{0.75cm}Design dive speed\nomunit{ms$^{-1}$}}
+\nomenclature[r]{$V_{F}$}{\hspace*{0.75cm}Design wing-flap speed\nomunit{ms$^{-1}$}}
+\nomenclature[r]{$n_{max}$}{\hspace*{0.75cm}Positive limit for manoeuvering load factor\nomunit{-}}
+\nomenclature[r]{$n_{min}$}{\hspace*{0.75cm}Negative limit for manoeuvering load factor\nomunit{-}}
+\nomenclature[r]{M}{\hspace*{0.75cm}Moment\nomunit{Nm}}
+\nomenclature[r]{T}{\hspace*{0.75cm}Thrust\nomunit{m}}
+\nomenclature[r]{SF}{\hspace*{0.75cm}Shear force\nomunit{Nm$^{-2}$}}
+
+

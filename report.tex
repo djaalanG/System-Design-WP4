@@ -1,0 +1,126 @@
+\documentclass[]{tudelft-AE-report}
+
+%% Set up the bibliography with natbib
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{tudelft-AE-report}  % Use your provided .bst file
+
+%% Other packages
+\usepackage{tabularray}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{varioref}
+\usepackage{cleveref}
+\usepackage{todonotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{calc}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{adjustbox} 
+\usepackage[table]{xcolor} % Required for coloring table cells
+\usepackage{array}         % Required for centering text in tables
+\usepackage[labelfont={bf}, 
+            textfont={it}, 
+            tableposition=top,
+            justification=centering]{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{easylist}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{changes}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{lipsum}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{geometry}
+\usepackage{nomencl}
+\usepackage{pdfpages}
+\usepackage{pgfgantt} % required for a gantt chart
+\usepackage{lscape} % To make something in landscape
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{diagbox}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\def\AR{\clipbox{0pt 0pt .32em 0pt}\AE\kern-.30emR}
+
+
+% The following add capital letters to all autoref command outputs
+\addto\extrasenglish{%
+    \def\chapterautorefname{Chapter}%
+    \def\sectionautorefname{Section}%
+    \def\subsectionautorefname{Section}%
+    \def\subsubsectionautorefname{Section}%
+    \def\paragraphautorefname{Paragraph}%
+    \def\subparagraphautorefname{Subparagraph}%
+    \def\equationautorefname{Equation}
+    \def\tableautorefname{Table}
+    \def\figureautorefname{Figure}
+    \def\footnoteautorefname{Footnote}
+    \def\Listautorefname{List}
+}
+
+\begin{document}
+%% ################### FRONT MATTER ###################
+%% Use Roman numerals for the page numbers of the title pages and table of contents.
+%\frontmatter
+\input{chapters/1_Cover.tex}
+
+\makecover[fillboxes]                   % The 'back' option enables the generation of the back cover.
+\pagenumbering{Roman}   % Start with Roman numerals
+\setcounter{page}{1}    % Ensure page numbering starts at i
+
+\input{chapters/2_Title}
+\input{chapters/3_Preface}
+\tableofcontents
+
+
+\input{chapters/summary}   % Keep page numbering as it is for the rest of the document
+
+\listoftables              % Optional list of tables
+\listoffigures             % Optional list of figures
+
+%% Generate the nomenclature
+\makenomenclature
+\renewcommand{\nomname}{List of Symbols}
+
+\input{chapters/11_Nomenclature}
+\printnomenclature
+
+
+%% ################### MAIN MATTER ###################
+%% Use Arabic numerals for the page numbers of the chapters.
+%\mainmatter
+\input{chapters/4_Introduction} \pagenumbering{arabic} \setcounter{page}{1} 
+\input{chapters/5_WP1 - Force Diagrams}
+\input{chapters/6_WP2 - Stiffness Calculations}
+\input{chapters/7_WP3 - Prelim wing box design}
+\input{chapters/conclusion}
+
+%% Prevent URLs from running into margins in bibliography
+
+
+%% Add bibliography
+\renewcommand{\bibname}{References}
+\bibliography{References/references}  % Specify your .bib files here
+
+%% ################### BACK MATTER ###################
+%% Use letters for the chapter numbers of the appendices.
+\appendix
+\input{chapters/Appendix_A}
+
+%% Drag+weight estimation
+\end{document}
+
