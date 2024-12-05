@@ -1,7 +1,7 @@
 \chapter{Preliminary Wing Box Design}
 \label{ch:Prelim_WB_Des}
-\noindent The wing box is the primary wing structure which serves as the base for all wing components. It needs to be designed in such a way that the whole wing will be able to cope/withstand all forces (bending, torsion, shear, etc.) acting on it during all parts of a flight. Firstly, the overview of the design procedure is presented in \autoref{sec:design procedure}. Secondly, the specific functions of the wing box will be stated in \autoref{sec:FuncAnalWinbox}. These functions were found based on calculations performed earlier in \autoref{ch:ForceDiagram} and 
-\autoref{ch:Stiff_Calc}. In \autoref{sec:Loading_Diagrams} six different V-n diagrams were derived from the specified conditions. Next in \autoref{sec:Tab_LoadCase} load cases are defined based on $\left(V_{EAS}-n\right)$ diagrams. These load cases are later used in \autoref{sec:Prelim_Des_Ops} to came up with three design options that meet the critical requirements stated earlier in \autoref{sec:Req_Anal_WB}.
+\noindent The wing box is the primary wing structure which serves as the base for all wing components. It needs to be designed in such a way that the whole wing will be able to cope/withstand all forces (bending, torsion, shear, etc.) acting on it during all parts of a flight. Firstly, the overview of the design procedure is presented in \autoref{sec:design procedure}. Secondly, the specific functions of the wing box will be stated in \autoref{sec:FuncAnalWinbox}. These functions were found based on calculations performed earlier in \autoref{ch:LoadAnalysis} and 
+\autoref{ch:Design Analysis}. In \autoref{sec:Loading_Diagrams} six different V-n diagrams were derived from the specified conditions. Next in \autoref{sec:Tab_LoadCase} load cases are defined based on $\left(V_{EAS}-n\right)$ diagrams. These load cases are later used in \autoref{sec:Prelim_Des_Ops} to came up with three design options that meet the critical requirements stated earlier in \autoref{sec:Req_Anal_WB}.
 
 \begin{comment}
     
@@ -10,7 +10,7 @@ One of these functions is being able to withstand the loads and moments determin
 
 \section{Wing box design procedure}
 \label{sec:design procedure}
-Wing box design is a complicated and iterative process that requires the usage of tools obtained earlier in \autoref{ch:ForceDiagram} and \autoref{ch:Stiff_Calc}. The first part of the design process is to obtain a manoeuvre-loading diagram for several flight cases to use them to define appropriate loading cases. These load cases along with force diagrams obtained earlier in \autoref{ch:ForceDiagram} were used to define final critical requirements that directly influenced the design. At this point, all three designs could have been proposed. The design team came up with three designs (based on different philosophies) that were later checked with the tool obtained in \autoref{ch:Stiff_Calc} to meet the critical requirements. Finally, the process of checking the requirements along with optimizing the preliminary design was performed several times to get three designs that meet all critical requirements stated earlier. The overview of the whole procedure is presented on the \autoref{fig:flowchart}.
+Wing box design is a complicated and iterative process that requires the usage of tools obtained earlier in \autoref{ch:LoadAnalysis} and \autoref{ch:Design Analysis}. The first part of the design process is to obtain a manoeuvre-loading diagram for several flight cases to use them to define appropriate loading cases. These load cases along with force diagrams obtained earlier in \autoref{ch:LoadAnalysis} were used to define final critical requirements that directly influenced the design. At this point, all three designs could have been proposed. The design team came up with three designs (based on different philosophies) that were later checked with the tool obtained in \autoref{ch:Design Analysis} to meet the critical requirements. Finally, the process of checking the requirements along with optimizing the preliminary design was performed several times to get three designs that meet all the critical requirements stated earlier. The overview of the whole procedure is presented on the \autoref{fig:flowchart}.
 
 
 
@@ -37,7 +37,7 @@ Wing box design is a complicated and iterative process that requires the usage o
     \centering
 \begin{tikzpicture}[node distance=2cm]
 
-\node (5ad49ccc-6515-4d1c-b24b-cd30eb88c845) [V-n-Rectangle, below of=9214c975-5b8d-40a1-a919-5f0ca9435a02, yshift=-0.5cm] {n-V Diagrams};
+\node (5ad49ccc-6515-4d1c-b24b-cd30eb88c845) [V-n-Rectangle, below of=9214c975-5b8d-40a1-a919-5f0ca9435a02, yshift=-0.5cm] {V-n Diagrams};
 \node (9214c975-5b8d-40a1-a919-5f0ca9435a02) [WP2-diamond, above of=5ad49ccc-6515-4d1c-b24b-cd30eb88c845, xshift=4cm] {WP 4.1};
 \node (d15626ae-577c-46b5-ab8e-b609b527d898) [WP2-diamond, right of=9214c975-5b8d-40a1-a919-5f0ca9435a02, xshift=2cm] {WP 4.2};
 
@@ -92,11 +92,11 @@ Wing box design is a complicated and iterative process that requires the usage o
       
         \label{tab:Wingbox_functions}
 \end{table}
-
+\todo{remove the final 2 if we cannot think of others}
 \section{Manoeuvre Loading Diagram}
 \label{sec:Loading_Diagrams}
 
-\noindent Finding the load cases requires drawing the manoeuvre loading diagram, also called V-n diagram, for different altitudes and weights considered. This graph shows which load factors correspond to the aircraft's most characteristic speeds. Here six different V-n diagrams will be provided by analysing the aircraft flying at cruise and sea altitude at the following three weight configurations: OEW, OEW + MPW, and OEW + MPW + MF such that MTOW is obtained. \autoref{fig:v-ncaseCrit} shows the most critical V-n diagram which corresponded to... \autoref{v-n_diagrams} contains the other five V-n diagrams. In order to draw these diagrams the following characteristic velocities and loading factors were used:
+\noindent Finding the load cases requires drawing the manoeuvre loading diagram, also called V-n diagram, for different altitudes and weights considered. This graph shows which load factors correspond to the aircraft's most characteristic speeds. Here six different V-n diagrams will be provided by analysing the aircraft flying at cruise and sea altitude at the following three weight configurations: OEW, OEW + MPW, and OEW + MPW + MF such that MTOW is obtained. \autoref{fig:v-ncaseCrit} shows the most critical V-n diagram which corresponded to... \autoref{v-n_diagrams} contains the other five V-n diagrams. To draw these diagrams the following characteristic velocities and loading factors were used:
 
 \begin{itemize}
     \item $V_{S0}$: stall speed with flaps extended. \autoref{eq:v_so}, taken from \textit{"AE2111-I: System Design - Project Reader" } \cite{Timmer2024AE2111-IReader}, was used. Here $W$ was replaced for each one of the weights in the three cases, $\rho$ corresponds to the sea level or cruise density, depending on the case being analysed, $C_{L_{max _{land}}}$ has a value of $2.5$, and the surface area of the wing (denoted by $S$) is $265.21$ m$^2$. %add reference to our previous report (report III)
@@ -115,7 +115,7 @@ Wing box design is a complicated and iterative process that requires the usage o
         V_A = \sqrt{\frac{2n_{max}W}{C_{L_{max_{clean}}}S\rho}}
     \end{equation}
     \item $V_C$: cruise speed. This was given to be 241.96 ms$^{-1}$ \cite{Timmer2024AE2111-IReader}.
-    \item $V_D$: design dive speed. The calculation for this speed is can be directly calculated by using \autoref{v_d} \cite{Timmer2024AE2111-IReader}.
+    \item $V_D$: design dive speed. The calculation for this speed can be directly calculated by using \autoref{v_d} \cite{Timmer2024AE2111-IReader}.
     \begin{equation}
     \label{v_d}
         V_D = 1.5V_C
@@ -161,78 +161,78 @@ As six different manoeuvre loading diagrams were obtained in the previous sectio
 \label{tab:LoadCases}
 \endfirsthead
     \hline
-    \rowcolor{blue!15} \textbf{Load Case} & \textbf{Description} & \textbf{Speed$_{EAS}$ [m s$^-1$]} & \textbf{Altitude} & \textbf{Weight [N]} & \textbf{n} & \textbf{Comments} \\
+    \rowcolor{blue!15} \textbf{Load Case} & \textbf{Description} & \textbf{Speed$_{EAS}$ [m s$^-1$]} & \textbf{Altitude} & \textbf{Weight [kN]} & \textbf{n} & \textbf{Comments} \\
     \hline
-    LC-1 & OEW Sea Level at $V_{d}$ & 362.94 & FL0 & 770060.92 & 2.5 & Trimmed HLDs (clean config.) \\
+    LC-1 & OEW Sea Level at $V_{d}$ & 362.94 & FL0 & 770.1 & 2.5 & Trimmed HLDs (clean config.) \\
     \hline
-    LC-2 & OEW Sea Level at $V_{c}$ & 241.96 & FL0 & 770060.92 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-2 & OEW Sea Level at $V_{c}$ & 241.96 & FL0 & 770.1 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-3 & OEW Sea Level at $V_{f,intersection}$ & 74.68 & FL0 & 770060.9165 & 2 & This is with full flaps \\ \hline
-    LC-4 & OEW Sea Level at $V_{a}$ & 83.50 & FL0 & 770060.92 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-3 & OEW Sea Level at $V_{f,intersection}$ & 74.68 & FL0 & 770.1 & 2 & This is with full flaps \\ \hline
+    LC-4 & OEW Sea Level at $V_{a}$ & 83.50 & FL0 & 770.1 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-5 & OEW Sea Level at $V_{S1}$ & 52.81 & FL0 & 770060.92 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-5 & OEW Sea Level at $V_{S1}$ & 52.81 & FL0 & 770.1 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-6 & OEW Cruise Level at $V_{d}$ & 184.47 & FL390 & 770060.92 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-6 & OEW Cruise Level at $V_{d}$ & 184.47 & FL390 & 770.1 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-7 & OEW Cruise Level at $V_{c}$ & 122.98 & FL390 & 770060.92 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-7 & OEW Cruise Level at $V_{c}$ & 122.98 & FL390 & 770.1 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-8 & OEW Cruise Level at $V_{f,intersection}$ & 74.68 & FL390 & 770060.92 & 2 & This is with full flaps \\ 
+    LC-8 & OEW Cruise Level at $V_{f,intersection}$ & 74.68 & FL390 & 770.1 & 2 & This is with full flaps \\ 
     \hline
-    LC-9 & OEW Cruise Level at $V_{a}$ & 83.50 & FL390 & 770060.92 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-9 & OEW Cruise Level at $V_{a}$ & 83.50 & FL390 & 770.1 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-10 & OEW Cruise Level at $V_{S1}$ & 52.81 & FL390 & 770060.92 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-10 & OEW Cruise Level at $V_{S1}$ & 52.81 & FL390 & 770.1 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-11 & OEW+MPW Sea Level at $V_{d}$ & 362.94 & FL0 & 1040574.12 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-11 & OEW+MPW Sea Level at $V_{d}$ & 362.94 & FL0 & 1040.6 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-12 & OEW+MPW Sea Level at $V_{c}$ & 241.96 & FL0 & 1040574.12& -1 & Trimmed HLDs (clean config.) \\ 
+    LC-12 & OEW+MPW Sea Level at $V_{c}$ & 241.96 & FL0 & 1040.6& -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-13 & OEW+MPW Sea Level at $V_{f,intersection}$ & 86.81 & FL0 & 1040574.12 & 2 & This is with full flaps \\ 
+    LC-13 & OEW+MPW Sea Level at $V_{f,intersection}$ & 86.81 & FL0 & 1040.6 & 2 & This is with full flaps \\ 
     \hline
-    LC-14 & OEW+MPW Sea Level at $V_{a}$ & 97.06 & FL0 & 1040574.12 & 2.5 & Trimmed HLDs (clean config.) \\
+    LC-14 & OEW+MPW Sea Level at $V_{a}$ & 97.06 & FL0 & 1040.6 & 2.5 & Trimmed HLDs (clean config.) \\
     \hline
-    LC-15 & OEW+MPW Sea Level at $V_{S1}$ & 61.39 & FL0 & 1040574.12& -1 & Trimmed HLDs (clean config.) \\ 
+    LC-15 & OEW+MPW Sea Level at $V_{S1}$ & 61.39 & FL0 & 1040.6& -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-16 & OEW+MPW Cruise at $V_{d}$ & 184.47 & FL390 & 1040574.12 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-16 & OEW+MPW Cruise at $V_{d}$ & 184.47 & FL390 & 1040.6& 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-17 & OEW+MPW Cruise at $V_{c}$ & 122.98 & FL390 & 1040574.12 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-17 & OEW+MPW Cruise at $V_{c}$ & 122.98 & FL390 & 1040.6 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-18 & OEW+MPW Cruise at $V_{f,intersection}$ & 86.81 & FL390 & 1040574.12 & 2 & This is with full flaps \\ 
+    LC-18 & OEW+MPW Cruise at $V_{f,intersection}$ & 86.81 & FL390 & 1040.6 & 2 & This is with full flaps \\ 
     \hline
-    LC-19 & OEW+MPW Cruise at $V_{a}$ & 97.06 & FL390 & 1040574.12 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-19 & OEW+MPW Cruise at $V_{a}$ & 97.06 & FL390 & 1040.6 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-20 & OEW+MPW Cruise at $V_{S1}$ & 61.39 & FL390 & 1040574.12 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-20 & OEW+MPW Cruise at $V_{S1}$ & 61.39 & FL390 & 1040.6 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-21 & OEW+MPW+fuel Sea Level at $V_{d}$ & 362.94 & FL0 & 1803421.35 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-21 & OEW+MPW+fuel Sea Level at $V_{d}$ & 362.94 & FL0 & 1803.4 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-22 & OEW+MPW+fuel Sea Level at $V_{c}$ & 241.96 & FL0 & 1803421.35 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-22 & OEW+MPW+fuel Sea Level at $V_{c}$ & 241.96 & FL0 & 1803.4 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-23 & OEW+MPW+fuel Sea Level at $V_{f,intersection}$ & 114.29 & FL0 & 1803421.35 & 2 & This is with full flaps \\ 
+    LC-23 & OEW+MPW+fuel Sea Level at $V_{f,intersection}$ & 114.29 & FL0 & 1803.4 & 2 & This is with full flaps \\ 
     \hline
-    LC-24 & OEW+MPW+fuel Sea Level at $V_{a}$ & 127.78 & FL0 & 1803421.35 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-24 & OEW+MPW+fuel Sea Level at $V_{a}$ & 127.78 & FL0 & 1803.4 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-25 & OEW+MPW+fuel Sea Level at $V_{S1}$ & 80.81 & FL0 & 1803421.35 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-25 & OEW+MPW+fuel Sea Level at $V_{S1}$ & 80.81 & FL0 & 1803.4 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-26 & OEW+MPW+fuel Cruise at $V_{d}$ & 184.47 & FL390 & 1803421.35 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-26 & OEW+MPW+fuel Cruise at $V_{d}$ & 184.47 & FL390 & 1803.4 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-27 & OEW+MPW+fuel Cruise at $V_{c}$ & 122.98 & FL390 & 1803421.35 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-27 & OEW+MPW+fuel Cruise at $V_{c}$ & 122.98 & FL390 & 1803.4 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-28 & OEW+MPW+fuel Cruise at $V_{f,intersection}$ & 114.29 & FL390 & 1803421.35 & 2 & This is with full flaps \\ 
+    LC-28 & OEW+MPW+fuel Cruise at $V_{f,intersection}$ & 114.29 & FL390 & 1803.4 & 2 & This is with full flaps \\ 
     \hline
-    LC-29 & OEW+MPW+fuel Cruise at $V_{a}$ & 127.78 & FL390 & 1803421.35 & 2.5 & Trimmed HLDs (clean config.) \\ 
+    LC-29 & OEW+MPW+fuel Cruise at $V_{a}$ & 127.78 & FL390 & 1803.4 & 2.5 & Trimmed HLDs (clean config.) \\ 
     \hline
-    LC-30 & OEW+MPW+fuel Cruise at $V_{S1}$ & 80.81 & FL390 & 1803421.35 & -1 & Trimmed HLDs (clean config.) \\ 
+    LC-30 & OEW+MPW+fuel Cruise at $V_{S1}$ & 80.81 & FL390 & 1803.4 & -1 & Trimmed HLDs (clean config.) \\ 
     \hline
 \end{longtable}
-
+\todo{Decimal points are unrealistically accurate}
 
 
 \section{Requirement Analysis}
 \label{sec:Req_Anal_WB}
 Out of 30 Load Cases presented in \autoref{tab:LoadCases} only a few of them will define critical load requirements that the design will be based on. These load cases could be obtained using both qualitative and numerical reasoning.
 \newline
-The qualitative approach is based on assuming that for the highest airplane weight (OEW + MPW + fuel) the highest lift is needed thus that loading case will be critical. Load cases from 21 - 30 all assume the highest airplane weight but on different flight levels. Out of these ten load cases, we select those with both the highest (2.5) and lowest (-1) load factors while ignoring cases with extended HLD (according to project reader \cite{Timmer2024ProjectDesign}). This procedure led to the selection of four critical loading cases (LC-21, LC-22, LC-26, LC-27) which were used to define critical requirements presented in \autoref{tab:req_list_wingbox}.
+The qualitative approach is based on assuming that for the highest airplane weight (OEW + MPW + fuel) the highest lift is needed thus that loading case will be critical. Load cases from 21 - 30 all assume the highest airplane weight but on different flight levels. Out of these ten load cases, we select those with both the highest (2.5) and lowest (-1) load factors while ignoring cases with extended HLD (according to project reader \cite{Timmer2024AE2111-IReader}). This procedure led to the selection of four critical loading cases (LC-21, LC-22, LC-26, LC-27) which were used to define critical requirements presented in \autoref{tab:req_list_wingbox}.
 \newline
-The numerical method was earlier described in \autoref{ch:ForceDiagram} and it will serve as confirmation of the after-mentioned qualitative approach.
+The numerical method was earlier described in \autoref{ch:Design Analysis} and it will serve as confirmation of the after-mentioned qualitative approach.
 
 \begin{comment}
     
@@ -267,15 +267,82 @@ After having obtained the most critical load cases in \autoref{sec:fd_critical_c
 
 \section{Preliminary Design Options}
 \label{sec:Prelim_Des_Ops}
-This section will focus on the preliminary design of the wing box. The wing box can be designed with the requirements determined in \autoref{sec:Req_Anal_WB}. These designs will be based on different design philosophies resulting in vastly different structures.
+This section will focus on the preliminary design of the wing box. Three different wing box designs will be selected. All of them will meet the requirements determined in \autoref{sec:Req_Anal_WB}. 
 
-\subsection*{Design Philosophies}
-There is a wide range of design options that need to be considered to finally select one and achieve the required stiffness for the wing box. Each one of these options will have a different impact on the geometry, price and performance of the wing box. \\
+\noindent As \autoref{fig:flowchart} showed, the possible designs for the wing box structure will be found by making use of the forces and load cases found in \autoref{ch:LoadAnalysis} and the stiffness calculations provided in \autoref{ch:Design Analysis}. By combining the code developed in the previous two chapters a high number of design options for the wing box was obtained. Three designs needed to be selected, therefore design philosophies needed to be defined to refine the selection. These different design philosophies will be explained in the following sections, together with a picture of the resulting selected design.
 
-\noindent The use of strong spars that carry most of the bending loads will help simplify the complexity of the design. However in this case the material was set to be AL2024-T81, therefore spars cannot be strengthened by used a different material. If this restriction did not exist, it would be recommended to consider other options. Another way to counteract this constrain would be increasing the thickness of the skin. The bad part of this solution would be the increase in weight and price of the design, as more material is being used. \\
 
-\noindent A second option to increase the stiffness of the wing box is to place a high number of closely-spaced stringers. With this design the load will be more evenly distributed, and therefore its stiffness will increase. The downside of this option is that it increases the complexity of the design, and therefore manufacturing will increase the cost. \\
+%\noindent The use of strong spars that carry most of the bending loads will help simplify the complexity of the design. However in this case the material was set to be AL2024-T81, therefore spars cannot be strengthened by used a different material. If this restriction did not exist, it would be recommended to consider other options. Another way to counteract this constrain would be increasing the thickness of the skin. The bad part of this solution would be the increase in weight and price of the design, as more material is being used. \\
 
-\noindent Another option to meet the torsional stiffness requirement is the use of several closed cells within the wing box. This design rapidly increases the stiffness, however complexity and weight will also increase. Alternatively the use of truss-like structures shall also be considered. If the geometry is optimized, the structure will flexible and capable of sustaining high loads while maintaining a low weight. 
+%\noindent A second option to increase the stiffness of the wing box is to place a high number of closely-spaced stringers. With this design the load will be more evenly distributed, and therefore its stiffness will increase. The downside of this option is that it increases the complexity of the design, and therefore manufacturing will increase the cost. \\
 
-\subsection*{Preliminary Results}
+%\noindent Another option to meet the torsional stiffness requirement is the use of several closed cells within the wing box. This design rapidly increases the stiffness, however complexity and weight will also increase. Alternatively the use of truss-like structures shall also be considered. If the geometry is optimized, the structure will flexible and capable of sustaining high loads while maintaining a low weight. 
+
+\subsection*{Design for Minimum Weight}
+The first out of three preliminary designs will be based on the weight minimization philosophy. The main goal of this design is to meet all required conditions for deflection and rotation (described in \autoref{ch:Design Analysis}). Worth mentioning is the fact that this particular design is the current most optimal one but several factors such as buckling analysis or wing box damage tolerance were omitted until this point, thus it is very likely that this design might change when performing a more precise analysis. The cross-section of the design is presented on \autoref{fig:min_weight}. In this figure the blue lines represent the wingbox with the blue dots being the stingers.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/Cross_section_min_W.pdf}
+    \caption{Cross section for the design optimized for minimum weight}
+    \label{fig:min_weight}
+\end{figure}
+
+\subsection*{Design for Limit Load}
+The second preliminary design will be designed towards the limit load, but it will be specifically designed towards minimizing buckling. This will be done by increasing the amount of stringers. The stringers increase the buckling resistance by decreasing the stringer spacing within the wingbox \cite{Timmer2024Project5}. This does however increase the weight significantly with respect to designs one and two.\\
+The stingers are positioned only in the front cell of the wingbox and are evenly spaced throughout the box. The full geometry of the cross-section can be seen in \autoref{fig:limit_load_design}. In this figure the blue lines represent the wingbox with the blue dots being the stingers.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/Cross_section_lim_load.pdf}
+    \caption{Cross section for the design optimized for the limit load}
+    \label{fig:limit_load_design}
+\end{figure}
+
+\subsection*{Design for Ultimate Load}
+The third preliminary design optimizes for the ultimate load, which corresponds to $1.5$ times the limit load \cite{S.Bart2023UltimateLoad}. This ultimate load represents the maximum load the wing box must withstand during extreme conditions, ensuring the safety of the mission. The FAA mandates a safety factor of $1.5$ for prescribed limit loads, which are considered external loads on the structure\cite{2023FAARegulations}, this is specified in CFR 14, part 25.303. Therefore, designing for the ultimate load meets regulatory requirements and guarantees structural safety.
+
+\noindent Additionally, this design aims to minimise weight, a key consideration in aerospace engineering. This explains why the number of stringers, represented by the two dots on the skin of the airfoil, is two. However, this design choice may have to be revisited during the future the future study of buckling behavior of the structure. as the design's stability under compressive loads was not yet examined.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/Cross_section_ult_load.pdf}
+    \caption{Cross section for the design optimized for the ultimate load}
+    \label{fig:ult_load_design}
+\end{figure}
+
+\subsection*{Design Parameter Table}
+\autoref{tab:parameters_3_designs} shows the main geometrical parameters needed to fully describe the geometry of the three selected wing box designs. As previously explained, those values were calculated by making use of the code developed in \autoref{ch:LoadAnalysis}, \autoref{ch:Design Analysis} and the critical load cases found with the V-n diagrams generated at the beginning of this section. 
+
+\begin{longtable}[c]{l|l|l|l|}
+\caption{Parameters for the three selected designs}
+\label{tab:parameters_3_designs}\\
+\cline{2-4}
+ &
+  \cellcolor[HTML]{CBCEFB}\textbf{Design 1} &
+  \cellcolor[HTML]{CBCEFB}\textbf{Design 2} &
+  \cellcolor[HTML]{CBCEFB}\textbf{Design 3} \\ \hline
+\endfirsthead
+%
+\multicolumn{4}{c}%
+{{\bfseries Table \thetable\ continued from previous page}} \\
+\cline{2-4}
+ &
+  \cellcolor[HTML]{CBCEFB}\textbf{Design 1} &
+  \cellcolor[HTML]{CBCEFB}\textbf{Design 2} &
+  \cellcolor[HTML]{CBCEFB}\textbf{Design 3} \\ \hline
+\endhead
+%
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Main Design Philosophy} &
+  Minimum weight &
+  Ultimate load &
+  Limit Load \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Thickness top and bottom {[}m{]}} & 0.001  & 0.001  & 0.001  \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Thickness sides {[}m{]}}          & 0.0007 & 0.0012 & 0.0007 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Number of stringers {[}-{]}}      & 2      & 2      & 6      \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Mass {[}kg{]}}                    & 547.83 & 632    & 675.6  \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Critical tip deflection {[}m{]}}                   & 3.62   & 3.39   & 2.78   \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Critical tip twist {[}deg{]}}     & 8.2656 & 6.601  & 7.8064 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Front spar {[}x/c{]}}             & 0.35   & 0.35   & 0.3    \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}Middle spar {[}x/c{]}}            & 0.55   & 0.55   & 0.5    \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{CBCEFB}End spar {[}x/c{]}}               &    0.65    & 0.7    &    0.6    \\ \hline
+\end{longtable}
